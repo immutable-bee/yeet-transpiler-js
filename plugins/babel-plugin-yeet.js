@@ -13,6 +13,12 @@ module.exports = function (babel) {
         if (path.node.name === "Sus") {
           path.replaceWith(t.identifier("Error"));
         }
+        if (path.node.name === "nocap") {
+          path.replaceWith(t.identifier("true"));
+        }
+        if (path.node.name === "cap") {
+          path.replaceWith(t.identifier("false"));
+        }
       },
     },
   };
